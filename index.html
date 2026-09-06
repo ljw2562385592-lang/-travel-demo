@@ -1,345 +1,257 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KIZUNA TRAVEL | Kyoto & Osaka Private Journey</title>
-  <meta name="description" content="京都・大阪を中心に、少人数のための上質なプライベート旅をご提案します。" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>唧唧旅游｜京都・大阪私人訂製旅行</title>
+  <meta name="description" content="京都、大阪、神戶、滋賀的小團私人訂製旅行。為 2–7 人家庭、情侶、朋友與商務旅客設計更從容、更深入的日本旅程。">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:title" content="唧唧旅游｜Private Journeys in Kansai">
+  <meta property="og:description" content="京都、大阪、神戶、滋賀的小團私人訂製旅行。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ljw2562385592-lang.github.io/-travel-demo/">
+  <link rel="canonical" href="https://ljw2562385592-lang.github.io/-travel-demo/">
   <link rel="preconnect" href="https://images.unsplash.com">
-  <style>
-    :root{
-      --bg:#f7f5f1;
-      --text:#1a1a1a;
-      --muted:#6f6a63;
-      --line:#ded8cf;
-      --accent:#8d7658;
-      --white:#fff;
-      --dark:#151515;
-      --card:#f1eee8;
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.65;
-      letter-spacing:.02em;
-    }
-    img{display:block;width:100%;height:100%;object-fit:cover}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
-    header{
-      position:fixed;top:0;left:0;right:0;z-index:30;
-      backdrop-filter:blur(12px);
-      background:rgba(247,245,241,.82);
-      border-bottom:1px solid rgba(141,118,88,.12);
-    }
-    .nav{
-      height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px;
-    }
-    .brand{font-weight:700;letter-spacing:.14em;font-size:15px}
-    .brand small{display:block;font-weight:500;font-size:10px;letter-spacing:.2em;color:var(--muted)}
-    nav{display:flex;gap:26px;font-size:13px;color:#4a4742}
-    .nav-cta{
-      border:1px solid var(--dark);padding:10px 16px;border-radius:999px;font-size:12px;
-    }
-    .hero{
-      min-height:100vh;position:relative;display:flex;align-items:flex-end;
-      padding:130px 0 72px;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,.08) 20%,rgba(0,0,0,.55) 100%),
-        url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1800&q=85') center/cover;
-      color:white;
-    }
-    .hero-inner{width:min(980px,calc(100% - 40px));margin:0 auto}
-    .eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;opacity:.86}
-    .hero h1{
-      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
-      font-size:clamp(42px,7vw,88px);line-height:1.1;font-weight:500;margin:16px 0 20px;
-      max-width:820px;
-    }
-    .hero p{font-size:16px;max-width:620px;color:rgba(255,255,255,.9)}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-height:48px;padding:0 20px;border-radius:999px;font-size:13px;transition:.2s;
-    }
-    .btn-light{background:white;color:#111}
-    .btn-ghost{border:1px solid rgba(255,255,255,.55);color:white}
-    .btn-dark{background:var(--dark);color:white}
-    .btn:hover{transform:translateY(-2px)}
-    section{padding:100px 0}
-    .section-head{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:end;margin-bottom:44px}
-    .kicker{font-size:11px;letter-spacing:.24em;color:var(--accent);text-transform:uppercase}
-    h2{
-      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
-      font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1.25;margin:10px 0 0;
-    }
-    .section-head p{color:var(--muted);margin:0}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .service-card{
-      background:var(--white);border-radius:24px;overflow:hidden;border:1px solid #e7e1d8;
-    }
-    .service-img{height:300px}
-    .service-body{padding:24px}
-    .service-body h3{margin:0 0 8px;font-size:18px;font-weight:600}
-    .service-body p{margin:0;color:var(--muted);font-size:14px}
-    .experience{background:#171715;color:white}
-    .experience .section-head p{color:#bdb8b1}
-    .experience-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
-    .experience-main,.experience-side{border-radius:28px;overflow:hidden;position:relative}
-    .experience-main{height:620px}
-    .experience-side{display:grid;gap:20px}
-    .experience-side .tile{height:300px;border-radius:28px;overflow:hidden;position:relative}
-    .overlay{
-      position:absolute;inset:auto 0 0 0;padding:26px;
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));
-    }
-    .overlay strong{font-size:20px}
-    .overlay span{display:block;font-size:12px;margin-top:6px;color:#ddd}
-    .journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .step{padding:26px 22px;border-top:1px solid var(--line)}
-    .step-num{font-size:12px;color:var(--accent);letter-spacing:.18em}
-    .step h3{font-size:17px;margin:14px 0 8px}
-    .step p{font-size:13px;color:var(--muted);margin:0}
-    .sample{
-      background:var(--card);border-radius:30px;padding:34px;
-      display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;
-    }
-    .sample-visual{height:460px;border-radius:24px;overflow:hidden}
-    .sample ul{list-style:none;padding:0;margin:24px 0}
-    .sample li{padding:12px 0;border-bottom:1px solid #d6cfc4;font-size:14px}
-    .faq{display:grid;grid-template-columns:1fr 1.3fr;gap:46px}
-    details{border-top:1px solid var(--line);padding:18px 0}
-    details:last-child{border-bottom:1px solid var(--line)}
-    summary{cursor:pointer;font-weight:600}
-    details p{color:var(--muted);font-size:14px}
-    .cta{
-      padding:90px 0;
-      background:
-        linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
-        url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1800&q=80') center/cover;
-      color:white;text-align:center;
-    }
-    .cta h2{max-width:760px;margin:0 auto 18px}
-    .cta p{max-width:620px;margin:0 auto 28px;color:#eee}
-    footer{padding:40px 0 60px;background:#111;color:#ddd}
-    .footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-end}
-    .footer-note{font-size:12px;color:#8d8d8d;max-width:520px}
-    .mini-links{display:flex;gap:18px;font-size:12px;color:#aaa}
-    @media (max-width:900px){
-      nav{display:none}
-      .section-head,.faq,.sample,.experience-grid{grid-template-columns:1fr}
-      .services{grid-template-columns:1fr}
-      .journey-grid{grid-template-columns:1fr 1fr}
-      .experience-main{height:460px}
-      .sample-visual{height:360px}
-    }
-    @media (max-width:600px){
-      .container{width:min(var(--max),calc(100% - 28px))}
-      .nav{height:66px}
-      .nav-cta{padding:8px 12px}
-      .hero{min-height:88vh;padding-bottom:46px}
-      .hero h1{font-size:43px}
-      section{padding:72px 0}
-      .section-head{gap:16px;margin-bottom:28px}
-      .journey-grid{grid-template-columns:1fr}
-      .experience-main{height:380px}
-      .experience-side .tile{height:220px}
-      .footer-grid{display:grid}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span data-i18n="topbar">Kyoto · Osaka · Kobe · Shiga｜2–7 人私人旅行</span>
+      <div class="lang-switch" aria-label="Language">
+        <button data-lang="zh-Hant" class="active">繁中</button>
+        <button data-lang="ja">日本語</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#">
-        KIZUNA TRAVEL
-        <small>PRIVATE JOURNEY IN JAPAN</small>
+      <a class="brand" href="#home" aria-label="唧唧旅游 home">
+        <span>唧唧旅游</span>
+        <small>PRIVATE JOURNEYS IN JAPAN</small>
       </a>
-      <nav>
-        <a href="#service">サービス</a>
-        <a href="#experience">体験</a>
-        <a href="#journey">ご利用の流れ</a>
-        <a href="#faq">FAQ</a>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="nav-links">
+        <a href="#journeys" data-i18n="navJourneys">旅程</a>
+        <a href="#experiences" data-i18n="navExperiences">體驗</a>
+        <a href="#why" data-i18n="navWhy">為什麼選我們</a>
+        <a href="#process" data-i18n="navProcess">流程</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
       </nav>
-      <a class="nav-cta" href="#contact">旅の相談をする</a>
+      <a class="pill pill-dark desktop-cta" href="#contact" data-i18n="navCta">開始規劃</a>
     </div>
   </header>
 
-  <main>
+  <main id="home">
     <section class="hero">
-      <div class="hero-inner">
-        <div class="eyebrow">Kyoto · Osaka · Private Travel</div>
-        <h1>旅を、もっと静かに。<br>もっと深く。</h1>
-        <p>京都・大阪を中心に、2〜7名の少人数旅行を一組ずつ丁寧に設計。観光地を巡るだけではない、土地の空気まで味わう上質な日本旅をご提案します。</p>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="eyebrow" data-i18n="heroEyebrow">PRIVATE KANSAI JOURNEYS</div>
+        <h1 data-i18n="heroTitle">不是趕景點。<br>是好好旅行。</h1>
+        <p class="hero-copy" data-i18n="heroCopy">以京都、大阪為核心，為 2–7 人的小團旅客設計節奏舒服、體驗細緻、能真正感受日本的私人旅程。</p>
         <div class="hero-actions">
-          <a class="btn btn-light" href="#service">旅のスタイルを見る</a>
-          <a class="btn btn-ghost" href="#contact">無料で相談する</a>
+          <a class="pill pill-light" href="#contact" data-i18n="heroCta1">免費諮詢旅程</a>
+          <a class="pill pill-ghost" href="#journeys" data-i18n="heroCta2">查看旅程靈感</a>
+        </div>
+        <div class="hero-meta">
+          <span data-i18n="meta1">2–7 人小團</span>
+          <span data-i18n="meta2">中 / 日 / 英溝通</span>
+          <span data-i18n="meta3">京都・大阪・神戶・滋賀</span>
         </div>
       </div>
     </section>
 
-    <section id="service">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="kicker">Our Service</div>
-            <h2>少人数だからできる、<br>余白のある旅。</h2>
-          </div>
-          <p>決まったパッケージではなく、滞在日数・同行者・食の好み・移動負担・撮影希望まで伺いながら、一組ごとに組み立てます。</p>
+    <section class="intro section">
+      <div class="container split">
+        <div>
+          <div class="kicker" data-i18n="introKicker">OUR APPROACH</div>
+          <h2 data-i18n="introTitle">我們不賣一模一樣的行程。</h2>
         </div>
-
-        <div class="services">
-          <article class="service-card">
-            <div class="service-img"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=80" alt="京都"></div>
-            <div class="service-body">
-              <h3>完全オーダーメイド</h3>
-              <p>京都・大阪・滋賀・神戸を中心に、興味と滞在テンポに合わせた旅程を設計します。</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <div class="service-img"><img src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?auto=format&fit=crop&w=1000&q=80" alt="旅館"></div>
-            <div class="service-body">
-              <h3>上質な宿と食</h3>
-              <p>温泉旅館、デザインホテル、会席、寿司、おまかせなど、体験全体の質を揃えます。</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <div class="service-img"><img src="https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1000&q=80" alt="日本文化"></div>
-            <div class="service-body">
-              <h3>ローカル体験</h3>
-              <p>早朝寺院、茶道、工芸、路地散歩、写真撮影など、混雑から少し離れた体験をご提案します。</p>
-            </div>
-          </article>
+        <div class="lead">
+          <p data-i18n="introBody">每一組客人的旅行方式都不同。有人想慢慢看京都，有人要帶父母和孩子，有人重視餐廳與住宿，也有人希望避開人潮。我們先理解你，再把交通、節奏、體驗與預算組合成一趟真正適合你的旅行。</p>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="experience">
+    <section id="journeys" class="section muted-bg">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="kicker">Selected Experiences</div>
-            <h2>有名な場所より、<br>記憶に残る時間を。</h2>
+            <div class="kicker" data-i18n="journeyKicker">SIGNATURE JOURNEYS</div>
+            <h2 data-i18n="journeyTitle">從這些旅程開始想像。</h2>
           </div>
-          <p>観光スポットの“数”ではなく、ひとつひとつの時間の密度を重視します。</p>
+          <p data-i18n="journeyDesc">以下為常見需求的參考方向。實際內容會依日期、人數、住宿等級與體驗需求重新設計。</p>
+        </div>
+
+        <div class="cards journeys">
+          <article class="card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=85" alt="Kyoto"></div>
+            <div class="card-body">
+              <div class="tag">KYOTO</div>
+              <h3 data-i18n="j1Title">京都深度私人一日</h3>
+              <p data-i18n="j1Body">避開趕場式觀光，依季節與興趣安排寺院、庭園、街區、茶屋或餐食。</p>
+              <div class="price" data-i18n="j1Price">參考：¥45,000 起 / 組</div>
+              <a href="#contact" class="text-link" data-i18n="ask">詢問這個旅程 →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=1400&q=85" alt="Osaka"></div>
+            <div class="card-body">
+              <div class="tag">KYOTO · OSAKA</div>
+              <h3 data-i18n="j2Title">京都大阪 4 天 3 夜</h3>
+              <p data-i18n="j2Body">古都、城市、美食與夜生活兼顧，適合第一次來關西但不想跟團的旅客。</p>
+              <div class="price" data-i18n="j2Price">參考：¥180,000 起 / 組</div>
+              <a href="#contact" class="text-link" data-i18n="ask">詢問這個旅程 →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=1400&q=85" alt="Japan family trip"></div>
+            <div class="card-body">
+              <div class="tag">FAMILY</div>
+              <h3 data-i18n="j3Title">關西家庭私人旅行</h3>
+              <p data-i18n="j3Body">降低步行與換乘壓力，照顧長輩、兒童與行李，將節奏安排得更舒服。</p>
+              <div class="price" data-i18n="j3Price">依需求報價</div>
+              <a href="#contact" class="text-link" data-i18n="ask">詢問這個旅程 →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="price-note" data-i18n="priceNote">※ 顯示金額為旅程設計與私人服務的參考起價，不代表住宿、交通、門票、餐飲等第三方費用已全部包含。正式報價會逐項說明。</div>
+      </div>
+    </section>
+
+    <section id="experiences" class="section dark-section">
+      <div class="container">
+        <div class="section-head light">
+          <div>
+            <div class="kicker" data-i18n="expKicker">CURATED EXPERIENCES</div>
+            <h2 data-i18n="expTitle">把旅行的記憶，留在細節裡。</h2>
+          </div>
+          <p data-i18n="expDesc">不是把行程塞滿，而是挑幾件真正值得記住的事。</p>
         </div>
 
         <div class="experience-grid">
-          <div class="experience-main">
-            <img src="https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?auto=format&fit=crop&w=1400&q=85" alt="京都の寺院">
-            <div class="overlay">
-              <strong>静かな朝の京都</strong>
-              <span>混雑前の寺院・庭園をゆっくり巡る半日プラン</span>
+          <div class="experience-large" style="background-image:url('https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?auto=format&fit=crop&w=1600&q=85')">
+            <div class="experience-caption">
+              <span>KYOTO MORNING</span>
+              <strong data-i18n="e1">清晨寺院與庭園</strong>
             </div>
           </div>
-          <div class="experience-side">
-            <div class="tile">
-              <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=1000&q=80" alt="和食">
-              <div class="overlay"><strong>季節を味わう食事</strong><span>会席・寿司・割烹</span></div>
+          <div class="experience-stack">
+            <div class="experience-small" style="background-image:url('https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=85')">
+              <div class="experience-caption"><span>DINING</span><strong data-i18n="e2">壽司・割烹・會席</strong></div>
             </div>
-            <div class="tile">
-              <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1000&q=80" alt="大阪">
-              <div class="overlay"><strong>大阪の夜</strong><span>ネオンの裏側まで案内するローカル散歩</span></div>
+            <div class="experience-small" style="background-image:url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=85')">
+              <div class="experience-caption"><span>CULTURE</span><strong data-i18n="e3">茶道・工藝・和服</strong></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="journey">
+    <section id="why" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="kicker">How It Works</div>
-            <h2>ご相談から旅の当日まで。</h2>
+            <div class="kicker" data-i18n="whyKicker">WHY KIZUNA</div>
+            <h2 data-i18n="whyTitle">我們把「安心」做進旅程裡。</h2>
           </div>
-          <p>まずは大まかな希望だけで構いません。初回相談から、旅程の提案・調整・当日のサポートまで一貫して対応します。</p>
         </div>
-
-        <div class="journey-grid">
-          <div class="step">
-            <div class="step-num">01 / CONSULT</div>
-            <h3>ご希望をヒアリング</h3>
-            <p>日程、人数、予算、興味、宿泊スタイルを確認します。</p>
-          </div>
-          <div class="step">
-            <div class="step-num">02 / DESIGN</div>
-            <h3>旅程をご提案</h3>
-            <p>移動負担や混雑まで考え、無理のない旅程を設計します。</p>
-          </div>
-          <div class="step">
-            <div class="step-num">03 / REFINE</div>
-            <h3>内容を調整</h3>
-            <p>食事や体験、ホテルの好みに合わせて細部を詰めます。</p>
-          </div>
-          <div class="step">
-            <div class="step-num">04 / TRAVEL</div>
-            <h3>旅を楽しむ</h3>
-            <p>必要に応じて当日サポートや現地案内まで対応します。</p>
-          </div>
+        <div class="feature-grid">
+          <div class="feature"><div class="feature-num">01</div><h3 data-i18n="w1t">小團優先</h3><p data-i18n="w1b">專注 2–7 人，行程更靈活，移動與用餐也更容易依照客人調整。</p></div>
+          <div class="feature"><div class="feature-num">02</div><h3 data-i18n="w2t">在地視角</h3><p data-i18n="w2b">不只排熱門景點，也重視時間帶、季節、人流、交通與真正適合停留的地方。</p></div>
+          <div class="feature"><div class="feature-num">03</div><h3 data-i18n="w3t">跨語言溝通</h3><p data-i18n="w3b">中文、日文、英文溝通，降低海外旅客在預約、理解規則與現場交流上的摩擦。</p></div>
+          <div class="feature"><div class="feature-num">04</div><h3 data-i18n="w4t">透明報價</h3><p data-i18n="w4b">旅程設計費、服務費與第三方費用分開說明，確認後再進入正式安排。</p></div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="process" class="section muted-bg">
       <div class="container">
-        <div class="sample">
+        <div class="section-head">
           <div>
-            <div class="kicker">Sample Journey</div>
-            <h2>京都・大阪<br>4日間の一例</h2>
-            <ul>
-              <li>DAY 1　京都到着・祇園・季節の会席</li>
-              <li>DAY 2　早朝寺院・南禅寺・茶道体験</li>
-              <li>DAY 3　大阪へ移動・ローカルフード・夜景</li>
-              <li>DAY 4　ホテル朝食・買い物・空港へ</li>
-            </ul>
-            <a class="btn btn-dark" href="#contact">この旅をベースに相談する</a>
+            <div class="kicker" data-i18n="processKicker">HOW IT WORKS</div>
+            <h2 data-i18n="processTitle">從一段對話開始。</h2>
           </div>
-          <div class="sample-visual">
-            <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1100&q=80" alt="京都旅">
-          </div>
+        </div>
+        <div class="process-grid">
+          <div class="process-item"><span>01</span><h3 data-i18n="p1t">告訴我們需求</h3><p data-i18n="p1b">日期、人數、預算、同行者、想去的地方與不想要的旅行方式。</p></div>
+          <div class="process-item"><span>02</span><h3 data-i18n="p2t">收到初步方向</h3><p data-i18n="p2b">我們先提供旅程框架、服務範圍與預算區間。</p></div>
+          <div class="process-item"><span>03</span><h3 data-i18n="p3t">確認正式方案</h3><p data-i18n="p3b">雙方確認服務內容、價格、付款與取消條件後，再進入安排。</p></div>
+          <div class="process-item"><span>04</span><h3 data-i18n="p4t">出發</h3><p data-i18n="p4b">依確認內容執行，並在旅行期間提供約定範圍內的支援。</p></div>
         </div>
       </div>
     </section>
 
-    <section id="faq">
-      <div class="container faq">
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-i18n="reviewKicker">TRAVEL STYLE</div>
+            <h2 data-i18n="reviewTitle">適合這樣的你。</h2>
+          </div>
+        </div>
+        <div class="quote-grid">
+          <blockquote data-i18n="q1">「我想帶父母來日本，但不想每天走兩萬步。」</blockquote>
+          <blockquote data-i18n="q2">「第一次來關西，希望經典景點有，但不要全是觀光客行程。」</blockquote>
+          <blockquote data-i18n="q3">「我們更在意住宿、吃飯和整體質感，而不是一天打卡十個地方。」</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container faq-grid">
         <div>
           <div class="kicker">FAQ</div>
-          <h2>よくあるご質問</h2>
+          <h2 data-i18n="faqTitle">常見問題</h2>
         </div>
-        <div>
-          <details>
-            <summary>何名から利用できますか？</summary>
-            <p>1名からご相談可能です。特に2〜7名程度の少人数旅行に適した設計を得意としています。</p>
-          </details>
-          <details>
-            <summary>旅程だけの相談も可能ですか？</summary>
-            <p>可能です。Demoでは旅程設計のみを想定していますが、将来的には予約代行や現地サポートへ拡張できます。</p>
-          </details>
-          <details>
-            <summary>中国語・英語でも対応できますか？</summary>
-            <p>日本語・中国語・英語の3言語サイトへの拡張を想定しています。</p>
-          </details>
-          <details>
-            <summary>費用はどのくらいですか？</summary>
-            <p>このDemoでは価格を固定せず、旅行内容に応じた個別見積りを想定しています。</p>
-          </details>
+        <div class="faq-list">
+          <details><summary data-i18n="f1q">可以只做京都一日嗎？</summary><p data-i18n="f1a">可以。單日私人行程與多日旅行都可以依需求規劃。</p></details>
+          <details><summary data-i18n="f2q">可以幫忙安排包車嗎？</summary><p data-i18n="f2a">可依需求協助對接合規的持牌交通業者。實際車型、價格與服務範圍以正式報價為準。</p></details>
+          <details><summary data-i18n="f3q">住宿和餐廳一定要透過你們訂嗎？</summary><p data-i18n="f3a">不一定。可以只做旅程設計，也可以在法規與服務範圍允許的前提下協助安排。</p></details>
+          <details><summary data-i18n="f4q">多久前聯絡比較好？</summary><p data-i18n="f4a">一般建議至少 2–4 週。櫻花、紅葉、黃金週、年末年始與熱門餐廳建議更早。</p></details>
+          <details><summary data-i18n="f5q">價格怎麼計算？</summary><p data-i18n="f5a">依人數、天數、服務深度、季節與第三方費用而異。正式確認前會提供清楚的費用說明。</p></details>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="cta">
-      <div class="container">
-        <div class="kicker" style="color:#ddd">Start Your Journey</div>
-        <h2>あなたらしい日本旅を、<br>一緒に組み立てませんか。</h2>
-        <p>まずは日程と人数だけでも大丈夫です。Demoでは問い合わせ導線の確認用として設置しています。</p>
-        <a class="btn btn-light" href="mailto:demo@example.com">旅の相談をする</a>
+    <section id="contact" class="contact-section">
+      <div class="container contact-grid">
+        <div>
+          <div class="kicker light-kicker" data-i18n="contactKicker">START YOUR JOURNEY</div>
+          <h2 data-i18n="contactTitle">告訴我們，你想怎麼玩日本。</h2>
+          <p data-i18n="contactDesc">填寫基本需求後，我們會依你的旅行日期、人數與預算整理初步方向。</p>
+          <div class="contact-points">
+            <span data-i18n="contactPoint1">✓ 無需先付款即可提出諮詢</span>
+            <span data-i18n="contactPoint2">✓ 先確認方向與服務範圍，再決定是否進行</span>
+            <span data-i18n="contactPoint3">✓ 不提供白牌有償接送</span>
+            <span>中國：<a href="tel:+8617863269026">+86 178 6326 9026</a></span>
+            <span>日本：<a href="tel:+818058390529">+81 80 5839 0529</a></span>
+            <span>Email：<a href="mailto:ljw2562385592@gmail.com">ljw2562385592@gmail.com</a></span>
+          </div>
+        </div>
+
+        <form id="inquiryForm" class="inquiry-form">
+          <div class="form-row">
+            <label><span data-i18n="name">姓名</span><input name="name" required></label>
+            <label><span data-i18n="contactMethod">聯絡方式</span><input name="contact" placeholder="LINE / WhatsApp / WeChat / Email" required></label>
+          </div>
+          <div class="form-row">
+            <label><span data-i18n="date">預計日期</span><input name="date" placeholder="2026/11/10–11/14"></label>
+            <label><span data-i18n="people">人數</span><input name="people" type="number" min="1" max="12" placeholder="4"></label>
+          </div>
+          <div class="form-row">
+            <label><span data-i18n="budget">預算</span><select name="budget"><option>未確定</option><option>¥50,000–¥100,000 / 人</option><option>¥100,000–¥200,000 / 人</option><option>¥200,000+ / 人</option></select></label>
+            <label><span data-i18n="area">主要地區</span><select name="area"><option>京都</option><option>大阪</option><option>京都＋大阪</option><option>關西多城市</option><option>其他</option></select></label>
+          </div>
+          <label><span data-i18n="message">想要的旅行方式</span><textarea name="message" rows="5" placeholder="例如：帶父母、不要太趕、想住溫泉旅館、喜歡日本料理…"></textarea></label>
+          <button class="pill pill-light full" type="submit" data-i18n="submit">整理需求並聯絡我們</button>
+          <p class="form-note" data-i18n="formNote">送出後會開啟你的郵件 App，並自動整理旅遊需求。可直接送出需求，系統會開啟郵件 App 並自動整理內容。</p>
+        </form>
       </div>
     </section>
   </main>
@@ -347,15 +259,21 @@
   <footer>
     <div class="container footer-grid">
       <div>
-        <div class="brand" style="color:#fff">KIZUNA TRAVEL<small>PRIVATE JOURNEY IN JAPAN</small></div>
-        <p class="footer-note">※ このサイトは市場検証用のDemoです。会社情報・旅行業登録情報・価格等は仮の内容です。</p>
+        <div class="brand footer-brand"><span>唧唧旅游</span><small>PRIVATE JOURNEYS IN JAPAN</small></div>
+        <p class="footer-copy" data-i18n="footerCopy">京都・大阪を中心に、少人数のためのプライベート旅行を設計します。</p>
       </div>
-      <div class="mini-links">
-        <a href="#">会社概要</a>
-        <a href="#">プライバシーポリシー</a>
-        <a href="#">利用規約</a>
+      <div class="footer-links">
+        <a href="privacy.html" data-i18n="privacy">隱私政策</a>
+        <a href="terms.html" data-i18n="terms">服務條款</a>
+        <a href="disclosure.html" data-i18n="disclosure">事業者資訊</a>
       </div>
     </div>
+    <div class="container legal-note">
+      <p data-i18n="legalNote">本網站所載服務將依實際營運主體、登記狀況與日本相關法令提供。第三方交通、住宿、餐飲及體驗之契約主體與費用，將於正式報價及契約確認時說明。</p>
+      <p>© 2026 唧唧旅游</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
